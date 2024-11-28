@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import logging
 
-logger = logging.getLogger("我的django日志:")
+logger = logging.getLogger("bb")
 
 
 # Create your views here.

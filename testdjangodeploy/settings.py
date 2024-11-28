@@ -130,3 +130,37 @@ STATIC_ROOT = BASE_DIR / "static"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# settings.py
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": " [%(asctime)s] [%(levelname)s] [%(name)s] [%(pathname)s:%(lineno)d -> %(funcName)s] %(message)s"
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "root": {  # 这会捕获所有日志
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {  # Django应用级别日志配置
+            "handlers": ["console"],
+            "level": "WARNING",  # 改为 DEBUG 级别
+            "propagate": False,
+        },
+        "bb": {  # 自定义级别日志配置
+            "handlers": ["console"],
+            "level": "DEBUG",  # 改为 DEBUG 级别
+            "propagate": False,
+        },
+    },
+}
