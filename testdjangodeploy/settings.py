@@ -26,14 +26,13 @@ SECRET_KEY = "django-insecure-kvp65$@te7oku(u&j27@s#9_ncm%w6xi)pvg-b&z5b$-^exugs
 # SECURITY WARNING: don't run with debug turned on in production!
 env = os.environ.get("DEBUG", "False").upper() == "TRUE"
 
-DEBUG = True
+DEBUG = env
 
-# if env == True:
-#     ALLOWED_HOSTS = ["*"]
-# else:
-#     ALLOWED_HOSTS = ["testdjangodeploy.imvbird.com"]
+if env == True:
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = ["testdjangodeploy.imvbird.com"]
 
-ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

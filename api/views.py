@@ -19,7 +19,6 @@ def current(request):
 
 # Create your views here.
 def index(request):
-    time.sleep(5)
     logger.debug("debug信息")
     logger.info("info信息")
     logger.warning("warning信息")
