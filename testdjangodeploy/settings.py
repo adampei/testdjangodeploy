@@ -26,13 +26,14 @@ SECRET_KEY = "django-insecure-kvp65$@te7oku(u&j27@s#9_ncm%w6xi)pvg-b&z5b$-^exugs
 # SECURITY WARNING: don't run with debug turned on in production!
 env = os.environ.get("DEBUG", "False").upper() == "TRUE"
 
-DEBUG = env
+DEBUG = True
 
-if env == True:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = ["testdjangodeploy.imvbird.com"]
+# if env == True:
+#     ALLOWED_HOSTS = ["*"]
+# else:
+#     ALLOWED_HOSTS = ["testdjangodeploy.imvbird.com"]
 
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -157,7 +158,7 @@ LOGGING = {
             "level": "WARNING",  # 改为 DEBUG 级别
             "propagate": False,
         },
-        "bb": {  # 自定义级别日志配置
+        "api": {  # 自定义级别日志配置
             "handlers": ["console"],
             "level": "DEBUG",  # 改为 DEBUG 级别
             "propagate": False,
